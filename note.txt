@@ -1,0 +1,56 @@
+## app folder
+In Next.js, the "app" folder has a special significance as it is used to define the top-level
+layout and behavior for your application. The contents of the "app" folder are used to customize
+the default App component provided by Next.js, which wraps around all other components and pages
+in your application. This allows you to add global styles, context providers, and perform other
+tasks that should be applied across all pages.
+
+# layout.js
+It is the root of our app. A root layout is the top-most layout in the root app directory.
+It is used to define the <html> and <body> tags and other globally shared UI.
+
+Layout components should accept and use a children prop. During rendering, children will be
+populated with the route segments the layout is wrapping.
+
+# page.js
+A page is UI that is unique to a route. You can define pages by exporting a component
+from a page.js file. Use nested folders to define a route and a page.js file to make
+the route publicly accessible.
+
+## How to create pages and navigation
+> Create a folder inside app folder naming as the page name you want. i,e, about, product
+> Create a file naming page.js inside the folder. i,e, about > page.js
+
+## Public folder
+Public folder is for to keep and use static assets in our app.
+
+## Styling in next js
+There are two types of system for styling
+module based style: those styles which we will use in a specific page or module or component, we will write those styles in page.module.css file.
+
+global style: those styles which we will use in our entire app, we will write those styles in globall.css file.
+
+The system of using our styles from global style file and module based style file are different.
+
+writing module based style css:
+write css in page.module.css file by maintaining cammel case. i,e, .myText{color:green}
+import styles from page.module.css
+use css like this: className={ styles.myText }
+
+## Rendering client side & Server side
+client side rendering: If we want to build a component or page which we want render
+in client side, then we need to write 'use client' at the top of the page. All the
+hooks in ract js is for client side render purpose.
+
+server side rendering: by default in next js is server side rendering. react js hook
+won't work in server side render component.
+
+## next.config.js file
+The next.config.js is a configuration file used in Next.js applications to customize
+the behavior of the Next.js build system. It is a regular Node.js module that exports
+an object containing various configuration options.
+
+## .next
+Once the project is launched, .next folder will be created to store page cache and
+some features to speed up your project. While project running, some files will be
+added to .next folder during your dev usage.
